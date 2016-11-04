@@ -1,0 +1,6 @@
+services:
+  - docker
+
+install:
+  - docker build -t alpine_base .
+  - docker run -d --name base alpine_base
