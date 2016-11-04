@@ -1,6 +1,11 @@
+sudo: required
+
 services:
   - docker
 
 install:
   - docker build -t alpine_base .
   - docker run -d --name base alpine_base /bin/sh
+
+script:
+  - docker ps -a | grep -q alpine_base
